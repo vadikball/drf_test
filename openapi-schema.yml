@@ -1,0 +1,915 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/v1/colors/:
+    get:
+      operationId: listColors
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Color'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createColor
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Color'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Color'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Color'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Color'
+          description: ''
+      tags:
+      - api
+  /api/v1/colors/{id}/:
+    get:
+      operationId: retrieveColor
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0426\u0432\u0435\u0442\
+          ."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Color'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateColor
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0426\u0432\u0435\u0442\
+          ."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Color'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Color'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Color'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Color'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateColor
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0426\u0432\u0435\u0442\
+          ."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Color'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Color'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Color'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Color'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyColor
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0426\u0432\u0435\u0442\
+          ."
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/brands/:
+    get:
+      operationId: listBrands
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Brand'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createBrand
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Brand'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+          description: ''
+      tags:
+      - api
+  /api/v1/brands/{id}/:
+    get:
+      operationId: retrieveBrand
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u0430\u0440\u043A\
+          \u0430."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateBrand
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u0430\u0440\u043A\
+          \u0430."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Brand'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateBrand
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u0430\u0440\u043A\
+          \u0430."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Brand'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyBrand
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u0430\u0440\u043A\
+          \u0430."
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/car_models/:
+    get:
+      operationId: listCarModels
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CarModel'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createCarModel
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarModel'
+          description: ''
+      tags:
+      - api
+  /api/v1/car_models/{id}/:
+    get:
+      operationId: retrieveCarModel
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u043E\u0434\u0435\
+          \u043B\u044C."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarModel'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateCarModel
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u043E\u0434\u0435\
+          \u043B\u044C."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarModel'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateCarModel
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u043E\u0434\u0435\
+          \u043B\u044C."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CarModel'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarModel'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyCarModel
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u043E\u0434\u0435\
+          \u043B\u044C."
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/orders/:
+    get:
+      operationId: listOrders
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: car_model__brand
+        required: false
+        in: query
+        description: car_model__brand
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Order'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createOrder
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Order'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+      tags:
+      - api
+  /api/v1/orders/{id}/:
+    get:
+      operationId: retrieveOrder
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0417\u0430\u043A\u0430\
+          \u0437."
+        schema:
+          type: string
+      - name: car_model__brand
+        required: false
+        in: query
+        description: car_model__brand
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateOrder
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0417\u0430\u043A\u0430\
+          \u0437."
+        schema:
+          type: string
+      - name: car_model__brand
+        required: false
+        in: query
+        description: car_model__brand
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Order'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateOrder
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0417\u0430\u043A\u0430\
+          \u0437."
+        schema:
+          type: string
+      - name: car_model__brand
+        required: false
+        in: query
+        description: car_model__brand
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Order'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyOrder
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0417\u0430\u043A\u0430\
+          \u0437."
+        schema:
+          type: string
+      - name: car_model__brand
+        required: false
+        in: query
+        description: car_model__brand
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/ordered_color/:
+    get:
+      operationId: listOrderedColors
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OrderedColor'
+          description: ''
+      tags:
+      - api
+  /api/v1/ordered_color/{id}/:
+    get:
+      operationId: retrieveOrderedColor
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0426\u0432\u0435\u0442\
+          ."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderedColor'
+          description: ''
+      tags:
+      - api
+  /api/v1/ordered_brand/:
+    get:
+      operationId: listOrderedBrands
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OrderedBrand'
+          description: ''
+      tags:
+      - api
+  /api/v1/ordered_brand/{id}/:
+    get:
+      operationId: retrieveOrderedBrand
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041C\u0430\u0440\u043A\
+          \u0430."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderedBrand'
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    Color:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+      required:
+      - name
+    Brand:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+      required:
+      - name
+    CarModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        brand:
+          type: integer
+      required:
+      - name
+      - brand
+    Order:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        car_model:
+          type: integer
+          writeOnly: true
+        color:
+          type: integer
+          writeOnly: true
+        model:
+          type: string
+          readOnly: true
+        brand:
+          type: string
+          readOnly: true
+        color_type:
+          type: string
+          readOnly: true
+        amount:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        date:
+          type: string
+          format: date
+      required:
+      - car_model
+      - color
+      - amount
+    OrderedColor:
+      type: object
+      properties:
+        color:
+          type: string
+          readOnly: true
+        amount:
+          type: string
+          readOnly: true
+    OrderedBrand:
+      type: object
+      properties:
+        brand:
+          type: string
+          readOnly: true
+        amount:
+          type: string
+          readOnly: true
