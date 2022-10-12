@@ -2,6 +2,7 @@ django==3.2
 uwsgi==2.0.20
 flake8==4.0
 django-debug-toolbar==3.4.0
+djangorestframework
 django-split-settings
 django-dotenv
 django-filter
