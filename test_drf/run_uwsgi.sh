@@ -8,6 +8,4 @@ done
 
 python3 manage.py migrate
 
-python3 manage.py makedata
-
-uwsgi --strict --ini /opt/app/movies_admin/uwsgi.ini
+uwsgi --strict --ini /opt/app/test_drf/uwsgi/uwsgi.ini
