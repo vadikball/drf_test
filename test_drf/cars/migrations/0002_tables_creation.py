@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('amount', models.PositiveIntegerField(verbose_name='количество')),
-                ('date', models.DateField(blank=True, default=datetime.datetime(2022, 10, 11, 18, 37, 57, 404508, tzinfo=utc), verbose_name='дата заказа')),
+                ('date', models.DateField(blank=True, default=django.utils.timezone.now, verbose_name='дата заказа')),
                 ('car_model', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cars.carmodel')),
                 ('color', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cars.color')),
             ],

@@ -1,5 +1,6 @@
 import uuid
 
+from django.utils.timezone import now
 from django.db import models
 from datetime import date
 
@@ -45,7 +46,7 @@ class Order(models.Model):
     color = models.ForeignKey('Color', on_delete=models.CASCADE, null=False)
     car_model = models.ForeignKey('CarModel', on_delete=models.CASCADE, null=False)
     amount = models.PositiveIntegerField('количество')
-    date = models.DateField('дата заказа', default=date.today(), blank=True)
+    date = models.DateField('дата заказа', default=now, blank=True)
 
     def __str__(self):
         return "{0} {1} Количество: {2} Дата: {3}".format(
